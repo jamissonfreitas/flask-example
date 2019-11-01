@@ -22,3 +22,17 @@ python app.py
 docker build -t flask-example .
 docker run -p 8787:8787 flask-example
 ```
+
+## Env format
+```
+DEBUG=False
+HOST=0.0.0.0
+PORT=8787
+FLASK_ENV=development
+FLASK_CONFIG=config.development
+SECRET_KEY=
+POSTGRES_URL=
+POSTGRES_USER=
+POSTGRES_PW=
+POSTGRES_DB=
+```
