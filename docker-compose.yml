@@ -3,14 +3,13 @@ services:
   db:
     image: postgres
     ports:
-      - "5430:5432"
+      - 5430:5432
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PW}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_DB: ${POSTGRES_DB}
     env_file:
       - .env
-    restart: always
   api:
     build: .
     env_file:
@@ -21,4 +20,3 @@ services:
       - "8787:8787"
     depends_on:
       - db
-    restart: always

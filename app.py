@@ -6,6 +6,9 @@ from config import db
 from decouple import config
 
 
+app = Flask("Products API")
+
+
 def create_api(app):
     api = SAFRSAPI(
         app,
@@ -20,7 +23,6 @@ def create_api(app):
 
 
 def create_app():
-    app = Flask("Products API")
     app.config.from_object(config('FLASK_CONFIG'))
     db.init_app(app)
     with app.app_context():
