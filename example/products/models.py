@@ -10,3 +10,11 @@ class Product(SAFRSBase, db.Model):
 
     def __repr__(self):
         return '<Product %r><product   %r>' % (self.name)
+
+    @property
+    def serialize(self):
+        return {
+            'description': self.description,
+            'name': self.name,
+            'id': self.id,
+        }
